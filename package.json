@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/stats-base-dists-negative-binomial-pmf",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Negative binomial distribution probability mass function (PMF).",
   "license": "Apache-2.0",
   "author": {
