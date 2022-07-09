@@ -72,7 +72,9 @@ If no recognized module system is present, access bundle contents via the global
 ```html
 <script type="text/javascript">
 (function () {
+(function () {
     window.pmf;
+})();
 })();
 </script>
 ```
@@ -170,6 +172,7 @@ y = mypmf( 10.0 );
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
+(function () {
 
 var i;
 var r;
@@ -185,6 +188,7 @@ for ( i = 0; i < 10; i++ ) {
     console.log( 'x: %d, r: %d, p: %d, P(X=x;r,p): %d', x, r, p.toFixed( 4 ), y.toFixed( 4 ) );
 }
 
+})();
 })();
 </script>
 </body>
