@@ -1,53 +1,12 @@
+"use strict";var E=function(r,e){return function(){return e||r((e={exports:{}}).exports,e),e.exports}};var X=E(function(ur,R){
+var M=require('@stdlib/math-base-special-gamma-lanczos-sum-expg-scaled/dist'),z=require('@stdlib/math-base-special-expm1/dist'),c=require('@stdlib/math-base-special-log1p/dist'),F=require('@stdlib/math-base-special-sqrt/dist'),m=require('@stdlib/math-base-special-abs/dist'),q=require('@stdlib/math-base-special-exp/dist'),l=require('@stdlib/math-base-special-pow/dist'),J=require('@stdlib/math-base-special-max/dist'),O=require('@stdlib/math-base-special-min/dist'),f=require('@stdlib/math-base-special-ln/dist'),o=require('@stdlib/constants-float64-max-ln/dist'),I=require('@stdlib/constants-float64-min-ln/dist'),P=require('@stdlib/constants-float64-gamma-lanczos-g/dist'),K=require('@stdlib/constants-float64-e/dist');function Q(r,e,a,n,A){var i,G,d,g,p,N,v,t,u,h,w,D,L,s;if(!A)return l(a,r)*l(n,e);if(L=r+e,g=r+P-.5,p=e+P-.5,N=L+P-.5,i=M(L),i/=M(r)*M(e),i*=F(p/K),i*=F(g/N),v=(a*e-n*g)/g,t=(n*r-a*p)/p,O(m(v),m(t))<.2)if(v*t>0||O(r,e)<1)m(v)<.1?i*=q(r*c(v)):i*=l(a*N/g,r),m(t)<.1?i*=q(e*c(t)):i*=l(n*N/p,e);else if(J(m(v),m(t))<.5)G=r<e,d=e/r,G&&d*t<.1||!G&&v/d>.1?(u=z(d*c(t)),u=v+u+u*v,u=r*c(u),i*=q(u)):(u=z(c(v)/d),u=t+u+u*t,u=e*c(u),i*=q(u));else if(m(v)<m(t))if(s=r*c(v)+e*f(n*N/p),s<=I||s>=o){if(s+=f(i),s>=o)return NaN;i=q(s)}else i*=q(s);else if(s=e*c(t)+r*f(a*N/g),s<=I||s>=o){if(s+=f(i),s>=o)return NaN;i=q(s)}else i*=q(s);else if(w=a*N/g,D=n*N/p,v=r*f(w),t=e*f(D),v>=o||v<=I||t>=o||t<=I)if(r<e)if(h=l(D,e/r),u=r*(f(w)+f(h)),u<o&&u>I)i*=l(h*w,r);else{if(t+=v+f(i),t>=o)return NaN;i=q(t)}else if(h=l(w,r/e),u=(f(h)+f(D))*e,u<o&&u>I)i*=l(h*D,e);else{if(t+=v+f(i),t>=o)return NaN;i=q(t)}else i*=l(w,r)*l(D,e);return i}R.exports=Q
+});var S=E(function(ar,j){
+var U=X();function V(r,e,a){var n,A;return r===1?0:(n=U(e,a,r,1-r,!0),A=(1-r)*r,n/=A,n)}j.exports=V
+});var y=E(function(vr,k){
+var T=require('@stdlib/math-base-assert-is-nan/dist'),W=require('@stdlib/math-base-assert-is-nonnegative-integer/dist'),Y=S();function Z(r,e,a){return T(r)||T(e)||T(a)||e<=0||a<=0||a>1?NaN:!W(r)||a===0?0:a/(e+r)*Y(a,e,r+1)}k.exports=Z
+});var C=E(function(nr,B){
+var $=require('@stdlib/math-base-assert-is-nonnegative-integer/dist'),x=require('@stdlib/utils-constant-function/dist'),_=require('@stdlib/math-base-assert-is-nan/dist'),b=S();function rr(r,e){if(_(r)||_(e)||r<=0||e<=0||e>1)return x(NaN);return a;function a(n){return _(n)?NaN:$(n)?e/(r+n)*b(e,r,n+1):0}}B.exports=rr
+});var er=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),H=y(),ir=C();er(H,"factory",ir);module.exports=H;
 /** @license Apache-2.0 */
-
-'use strict';
-
-/**
-* Negative binomial distribution probability mass function (PMF).
-*
-* @module @stdlib/stats-base-dists-negative-binomial-pmf
-*
-* @example
-* var pmf = require( '@stdlib/stats-base-dists-negative-binomial-pmf' );
-*
-* var y = pmf( 5.0, 20.0, 0.8 );
-* // returns ~0.157
-*
-* y = pmf( 21.0, 20.0, 0.5 );
-* // returns ~0.06
-*
-* y = pmf( 5.0, 10.0, 0.4 );
-* // returns ~0.016
-*
-* y = pmf( 0.0, 10.0, 0.9 );
-* // returns ~0.349
-*
-* y = pmf( 21.0, 15.5, 0.5 );
-* // returns ~0.037
-*
-* y = pmf( 5.0, 7.4, 0.4 );
-* // returns ~0.051
-*
-* var mypmf = pmf.factory( 10, 0.5 );
-* y = mypmf( 3.0 );
-* // returns ~0.027
-*
-* y = mypmf( 5.0 );
-* // returns ~0.061
-*/
-
-// MODULES //
-
-var setReadOnly = require( '@stdlib/utils-define-nonenumerable-read-only-property/dist' );
-var main = require( './main.js' );
-var factory = require( './factory.js' );
-
-
-// MAIN //
-
-setReadOnly( main, 'factory', factory );
-
-
-// EXPORTS //
-
-module.exports = main;
+/** @license Apache-2.0 */
+//# sourceMappingURL=index.js.map
