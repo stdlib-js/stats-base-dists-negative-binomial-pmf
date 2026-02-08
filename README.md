@@ -65,13 +65,18 @@ where `r > 0` is the number of successes until experiment is stopped and `0 < p 
 ## Usage
 
 ```javascript
+import pmf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/stats-base-dists-negative-binomial-pmf/tags). For example,
+
+```javascript
 import pmf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@v0.1.3-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@v0.1.3-deno/mod.js';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@deno/mod.js';
 ```
 
 #### pmf( x, r, p )
@@ -162,7 +167,7 @@ y = mypmf( 10.0 );
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@deno/mod.js';
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@deno/mod.js';
 import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@deno/mod.js';
-import pmf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@v0.1.3-deno/mod.js';
+import pmf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@deno/mod.js';
 
 var opts = {
     'dtype': 'float64'
