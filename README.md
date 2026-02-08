@@ -65,13 +65,13 @@ where `r > 0` is the number of successes until experiment is stopped and `0 < p 
 ## Usage
 
 ```javascript
-import pmf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@esm/index.mjs';
+import pmf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@v0.1.3-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@esm/index.mjs';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@v0.1.3-esm/index.mjs';
 ```
 
 #### pmf( x, r, p )
@@ -167,7 +167,7 @@ y = mypmf( 10.0 );
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@esm/index.mjs';
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
 import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@esm/index.mjs';
-import pmf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@esm/index.mjs';
+import pmf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-negative-binomial-pmf@v0.1.3-esm/index.mjs';
 
 var opts = {
     'dtype': 'float64'
