@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-06-10)
+## Unreleased (2026-06-15)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`0cd5a91`](https://github.com/stdlib-js/stdlib/commit/0cd5a91823f96d5f6599731354414806b542ab01) - **chore:** update keywords [(#12830)](https://github.com/stdlib-js/stdlib/pull/12830) _(by Philipp Burckhardt)_
 -   [`29f6a68`](https://github.com/stdlib-js/stdlib/commit/29f6a6888d2d653afc0f7ea8d81bb1872fb42780) - **bench:** refactor to use string interpolation in `stats/base/dists/negative-binomial` [(#10101)](https://github.com/stdlib-js/stdlib/pull/10101) _(by Shubham, Philipp Burckhardt)_
 -   [`6c08cf3`](https://github.com/stdlib-js/stdlib/commit/6c08cf3af7e3b88320f7bb153220328a0872c64e) - **bench:** refactor to use string interpolation in `stats/base/dists/negative-binomial` [(#10446)](https://github.com/stdlib-js/stdlib/pull/10446) _(by Vishal Gaikwad)_
 
