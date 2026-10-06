@@ -4,7 +4,29 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-09-15)
+## Unreleased (2026-10-06)
+
+<section class="features">
+
+### Features
+
+-   [`27712bc`](https://github.com/stdlib-js/stdlib/commit/27712bc66f4cf30f6f378b83e40a0b2c771caeee) - add C implementation for `stats/base/dists/negative-binomial/pmf` [(#14738)](https://github.com/stdlib-js/stdlib/pull/14738)
+
+</section>
+
+<!-- /.features -->
+
+<section class="issues">
+
+### Closed Issues
+
+This release closes the following issue:
+
+[#3766](https://github.com/stdlib-js/stdlib/issues/3766)
+
+</section>
+
+<!-- /.issues -->
 
 <section class="commits">
 
@@ -12,6 +34,7 @@
 
 <details>
 
+-   [`27712bc`](https://github.com/stdlib-js/stdlib/commit/27712bc66f4cf30f6f378b83e40a0b2c771caeee) - **feat:** add C implementation for `stats/base/dists/negative-binomial/pmf` [(#14738)](https://github.com/stdlib-js/stdlib/pull/14738) _(by Philipp Burckhardt, Karan Anand)_
 -   [`f6d52ce`](https://github.com/stdlib-js/stdlib/commit/f6d52ce8ab90649eb6c7d2802b003e2b6773949e) - **test:** migrate `stats/base/dists/negative-binomial/pmf` to ULP-based assertions [(#14101)](https://github.com/stdlib-js/stdlib/pull/14101) _(by Athan Reines)_
 -   [`0cd5a91`](https://github.com/stdlib-js/stdlib/commit/0cd5a91823f96d5f6599731354414806b542ab01) - **chore:** update keywords [(#12830)](https://github.com/stdlib-js/stdlib/pull/12830) _(by Philipp Burckhardt)_
 -   [`29f6a68`](https://github.com/stdlib-js/stdlib/commit/29f6a6888d2d653afc0f7ea8d81bb1872fb42780) - **bench:** refactor to use string interpolation in `stats/base/dists/negative-binomial` [(#10101)](https://github.com/stdlib-js/stdlib/pull/10101) _(by Shubham, Philipp Burckhardt)_
@@ -27,9 +50,10 @@
 
 ### Contributors
 
-A total of 4 people contributed to this release. Thank you to the following contributors:
+A total of 5 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
+-   Karan Anand
 -   Philipp Burckhardt
 -   Shubham
 -   Vishal Gaikwad

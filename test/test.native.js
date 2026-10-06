@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2018 The Stdlib Authors.
+* Copyright (c) 2026 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -20,12 +20,21 @@
 
 // MODULES //
 
+var resolve = require( 'path' ).resolve;
 var tape = require( 'tape' );
 var isAlmostSameValue = require( '@stdlib/assert-is-almost-same-value' );
 var isnan = require( '@stdlib/math-base-assert-is-nan' );
 var PINF = require( '@stdlib/constants-float64-pinf' );
 var NINF = require( '@stdlib/constants-float64-ninf' );
-var pmf = require( './../lib' );
+var tryRequire = require( '@stdlib/utils-try-require' );
+
+
+// VARIABLES //
+
+var pmf = tryRequire( resolve( __dirname, './../lib/native.js' ) );
+var opts = {
+	'skip': ( pmf instanceof Error )
+};
 
 
 // FIXTURES //
@@ -38,13 +47,13 @@ var highHigh = require( './fixtures/julia/high_high.json' );
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is a function', opts, function test( t ) {
 	t.ok( true, __filename );
 	t.strictEqual( typeof pmf, 'function', 'main export is a function' );
 	t.end();
 });
 
-tape( 'if provided `NaN` for any parameter, the function returns `NaN`', function test( t ) {
+tape( 'if provided `NaN` for any parameter, the function returns `NaN`', opts, function test( t ) {
 	var y = pmf( NaN, 20.0, 0.5 );
 	t.strictEqual( isnan( y ), true, 'returns expected value' );
 	y = pmf( 0.0, NaN, 0.5 );
@@ -54,7 +63,7 @@ tape( 'if provided `NaN` for any parameter, the function returns `NaN`', functio
 	t.end();
 });
 
-tape( 'if provided a negative integer for `x` and a valid `r` and `p`, the function returns `0`', function test( t ) {
+tape( 'if provided a negative integer for `x` and a valid `r` and `p`, the function returns `0`', opts, function test( t ) {
 	var y = pmf( NINF, 20, 0.5 );
 	t.strictEqual( y, 0.0, 'returns expected value' );
 
@@ -70,7 +79,7 @@ tape( 'if provided a negative integer for `x` and a valid `r` and `p`, the funct
 	t.end();
 });
 
-tape( 'if provided a non-integer for `x` and a valid `r` and `p`, the function returns `0`', function test( t ) {
+tape( 'if provided a non-integer for `x` and a valid `r` and `p`, the function returns `0`', opts, function test( t ) {
 	var y = pmf( -1.5, 20.0, 0.5 );
 	t.strictEqual( y, 0.0, 'returns expected value' );
 
@@ -86,7 +95,7 @@ tape( 'if provided a non-integer for `x` and a valid `r` and `p`, the function r
 	t.end();
 });
 
-tape( 'if provided `r` which is not a positive number, the function returns `NaN`', function test( t ) {
+tape( 'if provided a `r` which is not a positive number, the function returns `NaN`', opts, function test( t ) {
 	var y;
 
 	y = pmf( 2.0, -0.5, 0.5 );
@@ -101,7 +110,7 @@ tape( 'if provided `r` which is not a positive number, the function returns `NaN
 	t.end();
 });
 
-tape( 'if provided a success probability `p` outside of `[0,1]`, the function returns `NaN`', function test( t ) {
+tape( 'if provided a success probability `p` outside of `[0,1]`, the function returns `NaN`', opts, function test( t ) {
 	var y;
 
 	y = pmf( 2.0, 20, -1.0 );
@@ -119,7 +128,7 @@ tape( 'if provided a success probability `p` outside of `[0,1]`, the function re
 	t.end();
 });
 
-tape( 'the function evaluates the pmf for `x` given large `r` and `p`', function test( t ) {
+tape( 'the function evaluates the pmf for `x` given large `r` and `p`', opts, function test( t ) {
 	var expected;
 	var i;
 	var r;
@@ -132,13 +141,13 @@ tape( 'the function evaluates the pmf for `x` given large `r` and `p`', function
 	r = highHigh.r;
 	p = highHigh.p;
 	for ( i = 0; i < x.length; i++ ) {
-		y = pmf( x[i], r[i], p[i] );
+		y = pmf( x[ i ], r[ i ], p[ i ] );
 		t.strictEqual( isAlmostSameValue( y, expected[ i ], 655 ), true, 'returns expected value' );
 	}
 	t.end();
 });
 
-tape( 'the function evaluates the pmf for `x` given large parameter `r` and small `p`', function test( t ) {
+tape( 'the function evaluates the pmf for `x` given large parameter `r` and small `p`', opts, function test( t ) {
 	var expected;
 	var i;
 	var r;
@@ -151,13 +160,13 @@ tape( 'the function evaluates the pmf for `x` given large parameter `r` and smal
 	r = highSmall.r;
 	p = highSmall.p;
 	for ( i = 0; i < x.length; i++ ) {
-		y = pmf( x[i], r[i], p[i] );
+		y = pmf( x[ i ], r[ i ], p[ i ] );
 		t.strictEqual( isAlmostSameValue( y, expected[ i ], 688 ), true, 'returns expected value' );
 	}
 	t.end();
 });
 
-tape( 'the function evaluates the pmf for `x` given small `r` and large `p`', function test( t ) {
+tape( 'the function evaluates the pmf for `x` given small `r` and large `p`', opts, function test( t ) {
 	var expected;
 	var i;
 	var r;
@@ -170,13 +179,13 @@ tape( 'the function evaluates the pmf for `x` given small `r` and large `p`', fu
 	r = smallHigh.r;
 	p = smallHigh.p;
 	for ( i = 0; i < x.length; i++ ) {
-		y = pmf( x[i], r[i], p[i] );
+		y = pmf( x[ i ], r[ i ], p[ i ] );
 		t.strictEqual( isAlmostSameValue( y, expected[ i ], 143 ), true, 'returns expected value' );
 	}
 	t.end();
 });
 
-tape( 'the function evaluates the pmf for `x` given small `r` and `p`', function test( t ) {
+tape( 'the function evaluates the pmf for `x` given small `r` and `p`', opts, function test( t ) {
 	var expected;
 	var i;
 	var r;
@@ -189,7 +198,7 @@ tape( 'the function evaluates the pmf for `x` given small `r` and `p`', function
 	r = smallSmall.r;
 	p = smallSmall.p;
 	for ( i = 0; i < x.length; i++ ) {
-		y = pmf( x[i], r[i], p[i] );
+		y = pmf( x[ i ], r[ i ], p[ i ] );
 		t.strictEqual( isAlmostSameValue( y, expected[ i ], 110 ), true, 'returns expected value' );
 	}
 	t.end();
