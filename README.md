@@ -192,6 +192,8 @@ logEachMap( 'x: %d, r: %0.4f, p: %0.4f, P(X=x;r,p): %0.4f', x, r, p, pmf );
 
 <!-- C interface documentation. -->
 
+* * *
+
 <section class="c">
 
 ## C APIs
